@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<htmlh>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Slide show</title>
+    <meta name="viewport" content="width=device-width, initial-sacele=1">
+    <link rel="styesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+    <style>
+      .image{
+        margin: 300px;
+        right: auto;
+      }
+      .image img{
+        width: 100%;
+        height: 800px;
+      }
+      
+    .prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 500px;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 50px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+.next {
+  right: 143px;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+      .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 10px 10px;
+      background-color: #bbb;
+      border-radius: 50%; 
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+      @media only screen and (max-width: 300px) {
+      .prev, .next,.text {font-size: 11px}
+      }
+      </style>
+  </head>
+  <body>
+    <div class="image">
+        <img id="img" onclick="changeImage()" src="./1.avif" alt="">
+    <div>
+      <a class="prev" onclick="changeImage (-1)">❮</a>
+      <a class="next" onclick="changeImage ( 1)">❯</a>
+    </div>
+    <div style="text-align:center">
+      <span class="dot" onclick="changeImage(1)"></span> 
+      <span class="dot" onclick="changeImage(2)"></span> 
+      <span class="dot" onclick="changeImage(3)"></span> 
+      <span class="dot" onclick="changeImage(4)"></span> 
+    </div>
+    <script>
+      var index = 1;
+      changeImage = function (){
+        var imgs =["1.avif", "4.jfif", "6.jpg", "7.avif"]
+        document.getElementById('img').src = imgs[index];
+        index++;
+        if(index==4){
+          index = 0;
+        }
+      }
+      // setInterval(changeImage,3000); 
+      setTimeout()
+    </script>
+  </body>
+</htmlh>
